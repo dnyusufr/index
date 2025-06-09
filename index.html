@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Undangan Yakin & Putri</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #faf9f6;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .cover {
+      padding: 100px 20px;
+    }
+    #content {
+      display: none;
+      padding: 60px 20px;
+    }
+    button {
+      background-color: #345c4f;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .floral {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cover" class="cover">
+    <h1>UNDANGAN PERNIKAHAN</h1>
+    <p>Klik tombol di bawah untuk membuka undangan</p>
+    <button onclick="openInvitation()">BUKA UNDANGAN</button>
+    <div class="floral">🌿</div>
+  </div>
+
+  <div id="content">
+    <h2>Yakin & Putri</h2>
+    <p>Dengan memohon rahmat Allah SWT,<br>
+    kami mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami.</p>
+    <p>📍 Surabaya, Jawa Timur</p>
+    <p>🗓️ 15 Juli 2025</p>
+  </div>
+
+  <audio id="bgm" src="https://cdn.pixabay.com/download/audio/2023/03/14/audio_d9c65f2826.mp3?filename=calm-background-music-141997.mp3" loop></audio>
+
+  <script>
+    function openInvitation() {
+      document.getElementById("cover").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      document.getElementById("bgm").play();
+    }
+  </script>
+
+</body>
+</html>
