@@ -34,6 +34,7 @@
 </head>
 <body>
 
+  <!-- HALAMAN COVER -->
   <div id="cover" class="cover">
     <h1>UNDANGAN PERNIKAHAN</h1>
     <p>Klik tombol di bawah untuk membuka undangan</p>
@@ -41,6 +42,7 @@
     <div class="floral">🌿</div>
   </div>
 
+  <!-- HALAMAN ISI UNDANGAN -->
   <div id="content">
     <h2>Yakin & Putri</h2>
     <p>Dengan memohon rahmat Allah SWT,<br>
@@ -49,13 +51,26 @@
     <p>🗓️ 15 Juli 2025</p>
   </div>
 
-  <audio id="bgm" src="https://cdn.pixabay.com/download/audio/2023/03/14/audio_d9c65f2826.mp3?filename=calm-background-music-141997.mp3" loop></audio>
+  <!-- AUDIO -->
+  <audio id="bgm" src="music.mp3" loop preload="auto"></audio>
 
+  <!-- JAVASCRIPT -->
   <script>
     function openInvitation() {
       document.getElementById("cover").style.display = "none";
       document.getElementById("content").style.display = "block";
-      document.getElementById("bgm").play();
+      
+      const bgm = document.getElementById("bgm");
+      const playPromise = bgm.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Musik berhasil diputar
+        }).catch(error => {
+          alert("Harap aktifkan suara dan coba lagi. 🎵");
+          console.log("Autoplay gagal:", error);
+        });
+      }
     }
   </script>
 
